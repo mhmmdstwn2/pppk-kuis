@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soal PPPK Teknis Tahap 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .question {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Soal PPPK Teknis - Tahap 2</h1>
+
+  <form onsubmit="return checkAnswers();">
+    <div class="question">
+      <h2>1. Media pembelajaran yang tepat untuk menjelaskan "Jaringan Komputer"?</h2>
+      <input type="radio" name="q1" value="A"> A. Buku cetak dan papan tulis<br>
+      <input type="radio" name="q1" value="B"> B. PowerPoint tanpa animasi<br>
+      <input type="radio" name="q1" value="C"> C. Video simulasi dan kuis interaktif<br>
+      <input type="radio" name="q1" value="D"> D. Poster statis di dinding kelas<br>
+    </div>
+
+    <div class="question">
+      <h2>2. Dalam pembuatan RPP berbasis TIK, guru sebaiknya memilih platform yang?</h2>
+      <input type="radio" name="q2" value="A"> A. Hanya guru yang bisa mengakses materi<br>
+      <input type="radio" name="q2" value="B"> B. Siswa tidak bisa mengulang materi<br>
+      <input type="radio" name="q2" value="C"> C. Kolaborasi antar siswa dan guru secara daring<br>
+      <input type="radio" name="q2" value="D"> D. Hanya digunakan untuk ujian akhir saja<br>
+    </div>
+
+    <div class="question">
+      <h2>3. Output dari kode <code>print(x ** y)</code> jika x=5 dan y=2?</h2>
+      <input type="radio" name="q3" value="A"> A. 10<br>
+      <input type="radio" name="q3" value="B"> B. 25<br>
+      <input type="radio" name="q3" value="C"> C. 7<br>
+      <input type="radio" name="q3" value="D"> D. 3<br>
+    </div>
+
+    <div class="question">
+      <h2>4. Langkah dasar menjaga keamanan data pribadi di internet?</h2>
+      <input type="radio" name="q4" value="A"> A. Menggunakan satu password untuk semua akun<br>
+      <input type="radio" name="q4" value="B"> B. Menghindari update sistem<br>
+      <input type="radio" name="q4" value="C"> C. Menyimpan data penting di media sosial<br>
+      <input type="radio" name="q4" value="D"> D. Mengaktifkan autentikasi dua faktor<br>
+    </div>
+
+    <div class="question">
+      <h2>5. Fitur penting dalam LMS untuk mendukung pembelajaran daring?</h2>
+      <input type="radio" name="q5" value="A"> A. Games offline<br>
+      <input type="radio" name="q5" value="B"> B. Forum diskusi dan penilaian otomatis<br>
+      <input type="radio" name="q5" value="C"> C. Fitur pengubah wallpaper<br>
+      <input type="radio" name="q5" value="D"> D. Musik latar saat membuka halaman<br>
+    </div>
+
+    <input type="submit" value="Lihat Skor">
+  </form>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "C",
+        q2: "C",
+        q3: "B",
+        q4: "D",
+        q5: "B"
+      };
+      let score = 0;
+      for (let key in answers) {
+        const radios = document.getElementsByName(key);
+        for (const radio of radios) {
+          if (radio.checked && radio.value === answers[key]) {
+            score++;
+          }
+        }
+      }
+      alert("Skor Anda: " + score + " dari 5 soal");
+      return false;
+    }
+  </script>
+
+</body>
+</html>
